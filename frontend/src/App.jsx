@@ -1,14 +1,17 @@
-import Dashboard from "../src/pages/Dashboard";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Settings from './pages/Settings';
 
-// Display the App
-function App(){
-  return(
+function App() {
+  return (
     <div className="app">
-      
-      <h1>Vittaly</h1>
-      < Dashboard />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
     </div>
-  );  
+  );
 }
 
 export default App;
