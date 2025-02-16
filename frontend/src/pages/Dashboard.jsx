@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Toaster, toast } from "sonner";
-import { TodaysSummary, ScanFood, RecentEntries } from "../components/cards/DashboardCards";
+import { RecentEntries, ScanFood, TodaysSummary } from "../components/cards/DashboardCards";
+import Header from "../components/Header";
 
 // Main menu page (Dashboard)
 function Dashboard() {
@@ -40,12 +41,15 @@ function Dashboard() {
     //// Welcome message logic ////
 
     return (
+        <div className="min-h-screen bg-gray-100">
+      <Header />
         <div className="dashboard">
             <Toaster position="top-right" richColors />
             <TodaysSummary />
             <ScanFood />
             <RecentEntries />
         </div>
+    </div>
     );
 }
 
