@@ -4,7 +4,6 @@ import Header from "../components/HeaderComponent";
 const Settings = () => {
   const [activeSection, setActiveSection] = useState('profile');
 
-  // Render content based on the active section
   const renderContent = () => {
     switch (activeSection) {
       case 'profile':
@@ -75,13 +74,12 @@ const Settings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 w-full text-gray-900">
       <Header />
-      {/* Using flex-row to keep sidebar and content side by side */}
-      <div className="flex flex-row">
+      <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto">
         {/* Sidebar Navigation */}
-        <div className="w-64 bg-gray-100 p-4 border-r border-gray-200">
-          <h2 className="text-xl font-bold mb-4">Settings</h2>
+        <div className="md:w-80 w-full bg-gray-100 p-4 border-b md:border-r md:border-b-0">
+          <h2 className="text-xl font-bold mb-4 text-gray-900">Settings</h2>
           <ul className="space-y-2">
             <li>
               <button
@@ -89,7 +87,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'profile'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Profile
@@ -101,7 +99,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'security'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Account Security
@@ -113,7 +111,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'notifications'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Notifications
@@ -125,7 +123,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'privacy'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Privacy
@@ -137,7 +135,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'dietary'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Dietary Preferences
@@ -149,7 +147,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'app'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 App Preferences
@@ -161,7 +159,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'support'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Help & Support
@@ -173,7 +171,7 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   activeSection === 'logout'
                     ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
+                    : 'hover:bg-gray-200 text-gray-900'
                 }`}
               >
                 Log Out
@@ -183,7 +181,7 @@ const Settings = () => {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 w-full p-6">
           {renderContent()}
         </div>
       </div>
