@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Toaster, toast } from "sonner";
-import { RecentEntries, ScanFood, TodaysSummary } from "../components/cards/DashboardCards";
-import Header from "../components/Header";
+import { RecentEntries, ScanFood, TodaysSummary } from "../components/DashboardComponent";
+import Header from "../components/HeaderComponent";
+
 
 // Main menu page (Dashboard)
 function Dashboard() {
@@ -11,7 +12,7 @@ function Dashboard() {
     const welcomeMessages = [
         "Welcome back!",
         "Ready to level up your nutrition? Snap, track, and fuel your progress, one meal at a time!",
-        "Consistency is key, to achieve your goals!",
+        "Consistency is key to achieve your goals!",
         "Let's track it and make it count!",
         "You can start with an easy Snap!",
         "What time it is? it's meal time!",
@@ -42,11 +43,11 @@ function Dashboard() {
 
     return (
         <div className="min-h-screen bg-gray-100">
-      <Header />
+        <Toaster position="top-right" richColors />
+        <Header />
         <div className="dashboard">
-            <Toaster position="top-right" richColors />
-            <TodaysSummary />
             <ScanFood />
+            <TodaysSummary />
             <RecentEntries />
         </div>
     </div>
