@@ -1,9 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import "./App.css";
 import Dashboard from './pages/Dashboard';
 import Settings from './pages/Settings';
-import "./App.css"; 
-
 
 function App() {
   return (
