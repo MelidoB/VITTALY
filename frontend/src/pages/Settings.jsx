@@ -4,7 +4,6 @@ import Header from "../components/HeaderComponent";
 const Settings = () => {
   const [activeSection, setActiveSection] = useState('profile');
 
-  // Render content based on the active section
   const renderContent = () => {
     switch (activeSection) {
       case 'profile':
@@ -62,7 +61,7 @@ const Settings = () => {
             <h2 className="text-2xl font-bold mb-4">Log Out</h2>
             <p>Click below to log out of your account.</p>
             <button 
-              className="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition duration-200"
+              className="w-full bg-red-600 hover:bg-red-700 transition duration-200 rounded-md text-white py-2"
               onClick={() => alert('Logging out...')}
             >
               Confirm Logout
@@ -75,115 +74,34 @@ const Settings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-background text-primary w-full">
       <Header />
-      {/* Using flex-row to keep sidebar and content side by side */}
-      <div className="flex flex-row">
+      <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto">
         {/* Sidebar Navigation */}
-        <div className="w-64 bg-gray-100 p-4 border-r border-gray-200">
+        <div className="md:w-80 w-full bg-card p-4 border-b md:border-r md:border-b-0">
           <h2 className="text-xl font-bold mb-4">Settings</h2>
           <ul className="space-y-2">
-            <li>
-              <button
-                onClick={() => setActiveSection('profile')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'profile'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Profile
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('security')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'security'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Account Security
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('notifications')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'notifications'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Notifications
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('privacy')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'privacy'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Privacy
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('dietary')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'dietary'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Dietary Preferences
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('app')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'app'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                App Preferences
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('support')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'support'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Help & Support
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setActiveSection('logout')}
-                className={`w-full text-left p-2 rounded ${
-                  activeSection === 'logout'
-                    ? 'bg-blue-600 text-white'
-                    : 'hover:bg-gray-200'
-                }`}
-              >
-                Log Out
-              </button>
-            </li>
+            {['profile', 'security', 'notifications', 'privacy', 'dietary', 'app', 'support', 'logout'].map(
+              (section) => (
+                <li key={section}>
+                  <button
+                    onClick={() => setActiveSection(section)}
+                    className={`w-full text-left p-2 rounded ${
+                      activeSection === section
+                        ? 'bg-accent text-white'
+                        : 'hover:bg-hover-bg'
+                    }`}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                </li>
+              )
+            )}
           </ul>
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 w-full p-6">
           {renderContent()}
         </div>
       </div>
