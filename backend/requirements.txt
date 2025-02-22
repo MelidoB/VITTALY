@@ -1,0 +1,10 @@
+# To install all backend dependencies, run: pip install -r requirements.txt
+
+fastapi
+uvicorn
+tensorflow
+numpy
+pillow
+requests
+cryptography
+python-multipart
