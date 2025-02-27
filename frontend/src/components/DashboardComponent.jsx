@@ -17,10 +17,11 @@ function ScanFood() {
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("https://vittaly-backend-production.up.railway.app", {
+      const response = await fetch("https://vittaly-backend-production.up.railway.app/api/food_recognition", {
         method: "POST",
         body: formData,
-      });
+    });
+    
 
       const data = await response.json();
       setResult(data);
@@ -182,4 +183,3 @@ function RecentEntries() {
 }
 
 export { RecentEntries, ScanFood, TodaysSummary };
-
