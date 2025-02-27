@@ -17,7 +17,7 @@ function ScanFood() {
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/food_recognition", {
+      const response = await fetch("https://vittaly-backend-production.up.railway.app", {
         method: "POST",
         body: formData,
       });
