@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Toaster, toast } from "sonner";
-import { RecentEntries, ScanFood, TodaysSummary } from "../components/DashboardComponent";
 import Header from "../components/HeaderComponent";
+import DashboardComponent from "../components/DashboardComponent";
 
 function Dashboard() {
   const welcomeMessages = [
@@ -35,9 +35,7 @@ function Dashboard() {
       <Toaster position="top-right" richColors />
       <Header />
       <div className="dashboard">
-        <ScanFood />
-        <TodaysSummary />
-        <RecentEntries />
+        <DashboardComponent/>
       </div>
     </div>
   );
