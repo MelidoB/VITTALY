@@ -2,16 +2,19 @@ from pydantic import BaseModel, EmailStr
 from datetime import datetime
 
 class User(BaseModel):
+    user_id: str
     username: str
     email: EmailStr
-    passwordHash: str  # Remember: In production, use proper password hashing
-    createdAt: datetime = None  # This can be set when inserting the document
+    password_hash: str
+    created_at: datetime = None
 
     class Config:
         schema_extra = {
             "example": {
+                "user_id": "e3b0c442-98fc-1c14-9afc-2d6a6f9c1b01",
                 "username": "Alice",
                 "email": "alice@example.com",
-                "passwordHash": "hashed_password_here"
+                "password_hash": "hashed_password_here",
+                "created_at": "2025-03-01T08:30:00"
             }
         }
