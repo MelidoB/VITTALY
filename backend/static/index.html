@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vittaly API Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      background-color: #f8f9fa;
+      font-family: sans-serif;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .mb-4 {
+      margin-bottom: 1.5rem;
+    }
+    /* Carousel styles */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+    }
+    .slide {
+      display: none;
+      padding: 2rem;
+    }
+    .slide.active {
+      display: block;
+    }
+    /* Card styles */
+    .card {
+      background-color: #fff;
+      border: none;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      margin: 0 auto;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .card-text {
+      margin-bottom: 0.75rem;
+    }
+    /* Carousel controls */
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .carousel-control.prev {
+      left: 10px;
+    }
+    .carousel-control.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-4">Vittaly API Documentation</h1>
+    <p class="text-center">Click the arrows below to view instructions for each API endpoint.</p>
+    
+    <div class="carousel" id="apiCarousel">
+      <div class="carousel-inner">
+        <!-- Slide 1: Users API -->
+        <div class="slide active">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Users API</h5>
+              <p class="card-text"><strong>POST /api/users/</strong><br>
+                Create a new user. Send a JSON payload containing:<br>
+                <code>{
+  "user_id": "string",
+  "username": "string",
+  "email": "valid email",
+  "password_hash": "string"
+}</code></p>
+              <p class="card-text"><strong>GET /api/users/</strong><br>
+                Retrieves a list of all users.</p>
+              <p class="card-text"><strong>GET /api/users/{user_id}</strong><br>
+                Retrieves a user by user ID.</p>
+              <p class="card-text"><strong>PUT /api/users/{user_id}</strong><br>
+                Updates a user (send full user JSON payload).</p>
+              <p class="card-text"><strong>DELETE /api/users/{user_id}</strong><br>
+                Deletes a user by user ID.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Meals API -->
+        <div class="slide">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Meals API</h5>
+              <p class="card-text"><strong>POST /api/meals/</strong><br>
+                Create a new meal. JSON payload should include:<br>
+                <code>{
+  "meal_id": "string",
+  "user_id": "string",
+  "meal_name": "string",
+  "entry_type": "manual or scan"
+}</code></p>
+              <p class="card-text"><strong>GET /api/meals/</strong><br>
+                Retrieves a list of meals.</p>
+              <p class="card-text"><strong>GET /api/meals/{meal_id}</strong><br>
+                Retrieves a meal by meal ID.</p>
+              <p class="card-text"><strong>PUT /api/meals/{meal_id}</strong><br>
+                Updates a meal with a full JSON payload.</p>
+              <p class="card-text"><strong>DELETE /api/meals/{meal_id}</strong><br>
+                Deletes a meal by meal ID.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Nutrition API -->
+        <div class="slide">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Nutrition API</h5>
+              <p class="card-text"><strong>POST /api/nutrition/</strong><br>
+                Create nutrition info for a meal. Example JSON:<br>
+                <code>{
+  "nutrition_id": "string",
+  "meal_id": "string",
+  "calories": number,
+  "protein": number,
+  "carbs": number,
+  "fats": number,
+  "fiber": number
+}</code></p>
+              <p class="card-text"><strong>GET /api/nutrition/</strong><br>
+                Retrieves nutrition info for meals.</p>
+              <p class="card-text"><strong>GET /api/nutrition/{nutrition_id}</strong><br>
+                Retrieves a nutrition record by ID.</p>
+              <p class="card-text"><strong>PUT /api/nutrition/{nutrition_id}</strong><br>
+                Updates a nutrition record.</p>
+              <p class="card-text"><strong>DELETE /api/nutrition/{nutrition_id}</strong><br>
+                Deletes a nutrition record.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Goals API -->
+        <div class="slide">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Goals API</h5>
+              <p class="card-text"><strong>POST /api/goals/</strong><br>
+                Create a new goal. Example JSON:<br>
+                <code>{
+  "goal_id": "string",
+  "user_id": "string",
+  "daily_calories": number
+}</code></p>
+              <p class="card-text"><strong>GET /api/goals/</strong><br>
+                Retrieves all goals.</p>
+              <p class="card-text"><strong>GET /api/goals/{goal_id}</strong><br>
+                Retrieves a goal by ID.</p>
+              <p class="card-text"><strong>PUT /api/goals/{goal_id}</strong><br>
+                Updates a goal record.</p>
+              <p class="card-text"><strong>DELETE /api/goals/{goal_id}</strong><br>
+                Deletes a goal record.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5: Leaderboard API -->
+        <div class="slide">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Leaderboard API</h5>
+              <p class="card-text"><strong>POST /api/leaderboard/</strong><br>
+                Create a leaderboard entry. Example JSON:<br>
+                <code>{
+  "leaderboard_id": "string",
+  "user_id": "string",
+  "total_score": number
+}</code></p>
+              <p class="card-text"><strong>GET /api/leaderboard/</strong><br>
+                Retrieves leaderboard entries.</p>
+              <p class="card-text"><strong>GET /api/leaderboard/{leaderboard_id}</strong><br>
+                Retrieves a leaderboard entry by ID.</p>
+              <p class="card-text"><strong>PUT /api/leaderboard/{leaderboard_id}</strong><br>
+                Updates a leaderboard entry.</p>
+              <p class="card-text"><strong>DELETE /api/leaderboard/{leaderboard_id}</strong><br>
+                Deletes a leaderboard entry.</p>
+            </div>
+          </div>
+        </div>
+
+       
+      <!-- Carousel controls -->
+      <button class="carousel-control prev" id="prevBtn">&#9664;</button>
+      <button class="carousel-control next" id="nextBtn">&#9654;</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+      }
+
+      document.getElementById('prevBtn').addEventListener('click', function() {
+        currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+        showSlide(currentSlide);
+      });
+
+      document.getElementById('nextBtn').addEventListener('click', function() {
+        currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+        showSlide(currentSlide);
+      });
+    })();
+  </script>
+</body>
+</html>

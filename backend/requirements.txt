@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+tensorflow
+numpy
+pillow
+requests
+cryptography
+python-multipart
+
+#db
+
+pymongo[srv]
+motor
+python-dotenv
+pydantic[email]
