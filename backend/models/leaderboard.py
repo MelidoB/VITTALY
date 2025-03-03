@@ -8,7 +8,7 @@ class Leaderboard(BaseModel):
     last_updated: datetime = None
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "leaderboard_id": "1111aaaa-2222-bbbb-3333-cccc4444dddd",
                 "user_id": "e3b0c442-98fc-1c14-9afc-2d6a6f9c1b01",

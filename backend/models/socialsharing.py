@@ -9,7 +9,7 @@ class SocialSharing(BaseModel):
     shared_at: datetime = None
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "share_id": "aaaabbbb-cccc-dddd-eeee-ffff11112222",
                 "user_id": "e3b0c442-98fc-1c14-9afc-2d6a6f9c1b01",

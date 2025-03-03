@@ -1,15 +1,16 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Optional
 
 class User(BaseModel):
     user_id: str
     username: str
     email: EmailStr
     password_hash: str
-    created_at: datetime = None
+    created_at: Optional[datetime] = None  # Allow None if not provided
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "user_id": "e3b0c442-98fc-1c14-9afc-2d6a6f9c1b01",
                 "username": "Alice",

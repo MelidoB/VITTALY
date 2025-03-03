@@ -9,7 +9,7 @@ class Meal(BaseModel):
     created_at: datetime = None
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "meal_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
                 "user_id": "e3b0c442-98fc-1c14-9afc-2d6a6f9c1b01",

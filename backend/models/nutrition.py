@@ -11,7 +11,7 @@ class Nutrition(BaseModel):
     fiber: Optional[float] = None
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "nutrition_id": "a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6",
                 "meal_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
